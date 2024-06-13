@@ -57,7 +57,7 @@ const renderActiveNote = () => {
     hide(saveNoteBtn);
     hide(clearBtn);
 
-    if (activeNote.id) {
+    if (activeNote.note_id) {
         show(newNoteBtn);
         noteTitle.setAttribute("readonly", true);
         noteText.setAttribute("readonly", true);
@@ -110,7 +110,7 @@ const handleNoteView = (e) => {
     renderActiveNote();
 };
 
-// Sets the activeNote to and empty object and allows the user to enter a new note
+// Sets the activeNote to an empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
     activeNote = {};
     show(clearBtn);
@@ -185,6 +185,18 @@ const renderNoteList = async (notes) => {
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
+
+const addEventListenersToNotes = () => {
+    const eachNote = document.querySelectorAll(".list-group-item");
+    eachNote.forEach((note) => {
+        note.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const noteId = JSON.parse(note.getAttribute("data-note")).note_id;
+            activeNote = JSON.parse(note.getAttribute("data-note"));
+            renderActiveNote();
+        });
+    });
+};
 
 if (window.location.pathname === "/notes") {
     saveNoteBtn.addEventListener("click", handleNoteSave);

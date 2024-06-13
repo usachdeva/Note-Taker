@@ -33,20 +33,6 @@ git repo: https://github.com/usachdeva/Note-Taker
 deployed:https://usachdeva.github.io/Note-Taker/
 ```
 
-## Mock-Up
-
-The following GIF shows the web application's appearance and functionality:
-
-![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo.gif)
-
-## Getting Started
-
-On the back end, the application should include a `db.json` file that will be used to store and retrieve notes using the `fs` module.
-
-The following API routes should be created:
-
--   `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
-
 ---
 
 © Udit Sachdeva
