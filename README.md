@@ -30,7 +30,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ```
 git repo: https://github.com/usachdeva/Note-Taker
-deployed:https://usachdeva.github.io/Note-Taker/
+deployed: https://usachdeva.github.io/Note-Taker/
 ```
 
 ---
